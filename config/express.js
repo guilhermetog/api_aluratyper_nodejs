@@ -6,11 +6,12 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// app.use(function(req, res, next) {
-// 	res.header("Access-Control-Allow-Origin", "*");
-// 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-// 	next();
-// });
+app.use(function(req, res, next) {
+ 	res.header("Access-Control-Allow-Origin", "*");
+	 res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	 res.header("Access-Control-Allow-Origin", "https://guilhermetog.github.io/cli_aluratyper_jquery/");
+ 	next();
+ });
 
 consign({cwd: 'app'})
 	.include('api')
